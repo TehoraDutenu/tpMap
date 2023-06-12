@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <div class="form-panel">
+      <h3>Nouvel événement</h4>
+      <form method="get" class="form-evento">
+       
+        <fieldset>
+            <div class="form-evento">
+                <label for="title">Titre de l'événement</label>
+                <input type="text" id="evento-title" required />
+            </div>
+            <div class="form-evento">
+                <label for="description">Description </label><br>
+                <textarea  rows="10" cols="35" id="evento-description" required ></textarea>
+            </div>
+        </fieldset>
+       
+
+        <h4>Coordonnées géographiques</h4>
+        <fieldset>
+            <div class="form-evento">
+              <label for="latitude">Latitude</label>
+              <input type="number" id="evento-lat" required />
+            </div>
+            <div class="form-evento">
+              <label for="longitude">Longitude </label>
+              <input type="number" id="evento-lon" required />
+            </div>
+        </fieldset>
+
+        <h4>Agenda</h4>
+        <fieldset>
+            <div class="form-evento">
+              <label for="debut">Date de début</label>
+              <input type="datetime-local" id="evento-start" required />
+            </div>
+            <div class="form-evento">
+              <label for="fin">Date de fin</label>
+              <input type="datetime-local" id="evento-end" required />
+            </div>
+        </fieldset>
+
+        <button class="btn btn-primary ">Enregistrer l'événement</button>
+      </form>
+    </div>
+
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoidGVob3JhIiwiYSI6ImNsaW9oemdidTA4eHAzZW8xMHY5YjRrbjMifQ._w_mIUJSzjkcHCBgNSd5qA";
+      var map = new mapboxgl.Map({
+        container: "map", // identifiant du conteneur de la carte
+        style: "mapbox://styles/mapbox/streets-v12", // URL du style à utiliser
+        center: [2.45, 42.7333], // position par defaut [lng, lat]
+        zoom: 9, // zoom par defaut
+      });
+
+      map.addControl(new mapboxgl.NavigationControl(), "top-left");
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

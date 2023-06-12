@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#map {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+fieldset {
+    margin: 20px;
+}
+
+input {
+    width: 280px;
+    height: 30px;
+}
+
+.form-panel {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #c4bcb8;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px; 
+    height: 800px;
+    z-index: 1;
+}
+
+.form-evento {
+    margin: 10px 20px;
+}
+
+h4,
+h3 {
+    text-align: center;
+}
+
+h3 {
+    margin-top: 25px;
+}
+
+.btn {
+    width: 360px;
+    height: 30px;
+}
